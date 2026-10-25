@@ -11,7 +11,7 @@ const LINKS = [
   { href: "/#pricing", label: "Pricing" },
 ];
 
-export default function Nav() {
+export default function Nav({ transparent = false }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,16 +29,20 @@ export default function Nav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const clear = transparent && !scrolled && !open;
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-line/80 bg-cream/90 backdrop-blur-md"
-          : "border-b border-transparent bg-cream"
+        clear
+          ? "border-b border-cream/10 bg-transparent text-cream"
+          : scrolled || open
+            ? "border-b border-line/80 bg-cream/90 text-forest-deep backdrop-blur-md"
+            : "border-b border-transparent bg-cream text-forest-deep"
       }`}
     >
-      <nav className="container-page flex h-[72px] items-center justify-between" aria-label="Main">
-        <Link href="/" className="text-forest-deep" aria-label="MindHaven home" onClick={() => setOpen(false)}>
+      <nav className="container-page !max-w-7xl flex h-[72px] items-center justify-between" aria-label="Main">
+        <Link href="/" aria-label="MindHaven home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
@@ -47,7 +51,7 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-[15px] text-ink/80 transition-colors hover:text-forest"
+                className={`text-[15px] transition-colors ${clear ? "text-cream/85 hover:text-cream" : "text-ink/80 hover:text-forest"}`}
               >
                 {l.label}
               </Link>
@@ -56,17 +60,17 @@ export default function Nav() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/login" className="px-3 py-2 text-[15px] font-medium text-forest hover:underline underline-offset-4">
+          <Link href="/login" className={`px-3 py-2 text-[15px] font-medium underline-offset-4 hover:underline ${clear ? "text-cream" : "text-forest"}`}>
             Log In
           </Link>
-          <Link href="/find" className="btn-primary !py-2.5">
+          <Link href="/find" className={clear ? "btn bg-cream !py-2.5 text-forest-deep hover:bg-peach" : "btn-primary !py-2.5"}>
             Find Your Therapist
           </Link>
         </div>
 
         <button
           type="button"
-          className="-mr-2 grid h-11 w-11 place-items-center rounded-full text-forest lg:hidden"
+          className={`-mr-2 grid h-11 w-11 place-items-center rounded-full lg:hidden ${clear ? "text-cream" : "text-forest"}`}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}

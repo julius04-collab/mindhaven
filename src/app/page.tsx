@@ -1,18 +1,19 @@
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import Breathe from "@/components/Breathe";
 import Nav from "@/components/Nav";
 import Therapists from "@/components/Therapists";
-import { FinalCta, Hero, HowItWorks, Pricing, Services, Testimonials, Trust, Why } from "@/components/sections";
+import { FinalCta, Hero, HowItWorks, Pricing, Services, Testimonials, Why } from "@/components/sections";
 
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Nav transparent />
       <main id="main">
         <Hero />
-        <Trust />
         <HowItWorks />
         <Services />
+        <Breathe />
         <Why />
         <Therapists />
         <Testimonials />

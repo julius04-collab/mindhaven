@@ -6,7 +6,6 @@ import {
   Calendar,
   Chat,
   Check,
-  Clock,
   Compass,
   Heart,
   Leaf,
@@ -20,101 +19,97 @@ import {
 /* ───────────────────────── Hero ───────────────────────── */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="container-page grid items-center gap-12 pb-16 pt-10 md:pb-24 md:pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-        <div className="max-w-xl">
-          <p className="eyebrow mb-5 flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
-            Online therapy for busy professionals
-          </p>
-          <h1 className="font-serif text-[2.6rem] leading-[1.05] tracking-tight text-forest-deep sm:text-6xl lg:text-[4.1rem]">
-            Your mental wellness deserves <em className="font-normal italic text-forest">a space.</em>
-          </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-            Talk to a qualified therapist from wherever you are, at times that work around your
-            job. Tell us what&apos;s on your mind and we&apos;ll help you find someone who fits.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/find" className="btn-primary !px-7 !py-4">
-              Find Your Therapist <Arrow width={18} height={18} />
-            </Link>
-            <Link href="#how-it-works" className="btn-secondary !px-7 !py-4">
-              Explore How It Works
-            </Link>
-          </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-            {["Qualified professionals", "Evening & weekend sessions", "Private & confidential"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <Check width={16} height={16} className="text-forest" />
-                {t}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <section className="relative isolate -mt-[72px] flex min-h-[100svh] flex-col overflow-hidden bg-forest-deep text-cream">
+      <Image
+        src={IMAGES.hero}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="hero-zoom -z-20 object-cover object-center"
+      />
+      {/* Legibility: deep green wash from the left and bottom, keeps the photo breathing on the right */}
+      <div
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(18,40,30,0.35)_0%,rgba(18,40,30,0.25)_25%,rgba(18,40,30,0.88)_62%,rgba(18,40,30,0.96)_100%)] lg:bg-[linear-gradient(90deg,rgba(18,40,30,0.88)_0%,rgba(18,40,30,0.6)_40%,rgba(18,40,30,0.1)_78%),linear-gradient(0deg,rgba(18,40,30,0.8)_0%,rgba(18,40,30,0)_45%)]"
+        aria-hidden
+      />
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="absolute -right-10 top-10 h-72 w-72 rounded-full bg-peach/70 blur-3xl" aria-hidden />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-sand">
-            <Image
-              src={IMAGES.hero}
-              alt="A woman relaxing on the floor of her living room, talking on a video call on her laptop"
-              fill
-              priority
-              sizes="(min-width: 1024px) 480px, 90vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="absolute -left-3 bottom-10 flex items-center gap-3 rounded-2xl bg-white/95 p-3.5 pr-5 shadow-[0_18px_40px_-18px_rgba(24,54,41,0.35)] backdrop-blur sm:-left-8">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-teal-soft text-forest">
-              <Video />
-            </span>
-            <span className="text-sm leading-tight">
-              <span className="block font-semibold text-forest-deep">Sessions from your sofa</span>
-              <span className="text-muted">Video, audio or chat</span>
-            </span>
-          </div>
-          <div className="absolute -right-2 top-14 flex items-center gap-2 rounded-full bg-forest px-4 py-2.5 text-sm font-medium text-cream shadow-lg sm:-right-6">
-            <Clock width={16} height={16} /> Evenings &amp; weekends
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ───────────────────────── Trust ───────────────────────── */
-export function Trust() {
-  const items = [
-    {
-      icon: <Person />,
-      title: "Qualified professionals",
-      text: "Every therapist is a licensed or accredited practitioner in their field.",
-    },
-    {
-      icon: <Calendar />,
-      title: "Flexible appointments",
-      text: "Book mornings, evenings or weekends, and reschedule when work shifts.",
-    },
-    {
-      icon: <Shield />,
-      title: "Private & confidential",
-      text: "Secure sessions. What you share stays between you and your therapist.",
-    },
-  ];
-  return (
-    <section aria-label="Why you can trust MindHaven" className="border-y border-line bg-sand/60">
-      <div className="container-page grid gap-8 py-10 md:grid-cols-3 md:gap-6">
-        {items.map((i) => (
-          <div key={i.title} className="flex gap-4">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-cream text-forest ring-1 ring-line">
-              {i.icon}
-            </span>
-            <div>
-              <h3 className="font-semibold text-forest-deep">{i.title}</h3>
-              <p className="mt-1 text-[15px] leading-relaxed text-muted">{i.text}</p>
+      <div className="container-page !max-w-7xl flex flex-1 flex-col justify-end pb-10 pt-28 md:pb-12 md:pt-32">
+        <p className="rise eyebrow !text-peach flex items-center gap-3" style={{ animationDelay: "0.1s" }}>
+          <span className="h-px w-10 bg-peach/70" aria-hidden />
+          Online therapy for busy professionals
+        </p>
+        <h1
+          className="rise mt-6 max-w-[14ch] font-serif text-[clamp(3rem,8.4vw,8rem)] font-light leading-[0.92] tracking-[-0.035em] lg:max-w-none"
+          style={{ animationDelay: "0.2s" }}
+        >
+          Your mental wellness <br className="hidden lg:block" />
+          deserves <em className="font-normal italic text-peach">a space.</em>
+        </h1>
+        <div className="mt-10 grid items-end gap-10 lg:grid-cols-[1fr_24rem] lg:gap-16">
+          <div>
+            <p className="rise max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl" style={{ animationDelay: "0.35s" }}>
+              Talk to a qualified therapist from wherever you are, at times that work around your job. Tell us
+              what&apos;s on your mind and we&apos;ll help you find someone who fits.
+            </p>
+            <div className="rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "0.5s" }}>
+              <Link href="/find" className="btn bg-cream !px-8 !py-4 text-forest-deep hover:bg-peach">
+                Find Your Therapist <Arrow width={18} height={18} />
+              </Link>
+              <Link
+                href="#how-it-works"
+                className="btn border border-cream/30 !px-8 !py-4 text-cream backdrop-blur-sm hover:border-cream hover:bg-cream/10"
+              >
+                Explore How It Works
+              </Link>
             </div>
           </div>
-        ))}
+
+          {/* Quick start: the first step of matching, right in the hero */}
+          <div
+            className="rise border border-cream/15 bg-forest-deep/40 p-6 backdrop-blur-xl"
+            style={{ animationDelay: "0.65s" }}
+          >
+            <p className="text-sm font-semibold text-cream">What&apos;s on your mind?</p>
+            <p className="mt-1 text-sm text-cream/65">Pick one to see therapists who focus on it.</p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {SERVICES.map((s) => (
+                <li key={s.id}>
+                  <Link
+                    href={`/find?need=${s.id}`}
+                    className="inline-flex rounded-full border border-cream/25 px-3.5 py-2 text-sm text-cream/90 transition-colors hover:border-peach hover:bg-peach hover:text-forest-deep"
+                  >
+                    {s.title.replace(" Support", "").replace(" Management", "")}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/find" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-peach hover:underline underline-offset-4">
+              Not sure yet? Start here <Arrow width={15} height={15} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Trust indicators */}
+        <ul
+          aria-label="Why you can trust MindHaven"
+          className="rise mt-12 grid gap-5 border-t border-cream/15 pt-6 text-sm sm:grid-cols-3 md:mt-16"
+          style={{ animationDelay: "0.8s" }}
+        >
+          {[
+            { icon: <Person width={18} height={18} />, t: "Qualified professionals", d: "Licensed or accredited practitioners" },
+            { icon: <Calendar width={18} height={18} />, t: "Flexible appointments", d: "Mornings, evenings & weekends" },
+            { icon: <Shield width={18} height={18} />, t: "Private & confidential", d: "Secure, one-to-one sessions" },
+          ].map((i) => (
+            <li key={i.t} className="flex items-start gap-3">
+              <span className="mt-0.5 text-peach">{i.icon}</span>
+              <span>
+                <span className="block font-semibold text-cream">{i.t}</span>
+                <span className="text-cream/60">{i.d}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -139,13 +134,13 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-28">
       <div className="container-page">
-        <div className="max-w-2xl">
+        <div className="reveal max-w-2xl">
           <p className="eyebrow">How it works</p>
           <h2 className="h-section mt-3">Getting support shouldn&apos;t feel like another job.</h2>
           <p className="mt-4 text-lg text-muted">Three simple steps, at your own pace.</p>
         </div>
 
-        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+        <ol className="reveal-group mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {steps.map((s, i) => (
             <li key={s.title} className="relative">
               {i < steps.length - 1 && (
@@ -183,7 +178,7 @@ export function Services() {
     <section id="services" className="bg-forest-deep py-20 text-cream md:py-28">
       <div className="container-page">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow !text-teal">Services</p>
             <h2 className="mt-3 font-serif text-3xl leading-[1.12] tracking-tight sm:text-4xl md:text-[2.75rem]">
               Support for what you&apos;re carrying right now.
@@ -195,7 +190,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href={`/find?need=${first.id}`}
             className="group flex flex-col justify-between rounded-[var(--radius-card)] bg-peach p-7 text-forest-deep transition-transform duration-300 hover:-translate-y-1 lg:row-span-2"
@@ -259,31 +254,31 @@ export function Why() {
     },
   ];
   return (
-    <section id="why" className="py-20 md:py-28">
-      <div className="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <div className="relative order-last lg:order-first">
-          <div className="relative aspect-[5/6] overflow-hidden rounded-[2rem] bg-sand">
+    <section id="why" className="grid lg:grid-cols-2">
+      <div className="contents">
+        <div className="relative order-last min-h-[26rem] lg:order-first lg:min-h-full">
+          <div className="parallax absolute inset-0 overflow-hidden bg-sand">
             <Image
               src={IMAGES.why}
               alt="A woman sitting at a table with her laptop and a cup of coffee in soft daylight"
               fill
-              sizes="(min-width: 1024px) 520px, 100vw"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 right-6 max-w-[15rem] rounded-2xl bg-forest p-5 text-cream shadow-xl">
+          <div className="absolute bottom-0 right-0 max-w-[17rem] bg-forest p-6 text-cream">
             <p className="font-serif text-lg leading-snug">&ldquo;Asking for help is a strength, not a setback.&rdquo;</p>
           </div>
         </div>
 
-        <div>
+        <div className="px-5 py-20 sm:px-8 md:py-28 lg:px-16 xl:pl-20 xl:pr-[max(2rem,calc((100vw-72rem)/2+2rem))]">
           <p className="eyebrow">Why MindHaven</p>
-          <h2 className="h-section mt-3">Built for people who keep putting themselves last.</h2>
+          <h2 className="reveal h-section mt-3">Built for people who keep putting themselves last.</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Traditional therapy can feel hard to fit in and harder to start. We&apos;ve removed the friction so the
             only thing left to focus on is you.
           </p>
-          <ul className="mt-10 grid gap-8 sm:grid-cols-2">
+          <ul className="reveal-group mt-10 grid gap-8 sm:grid-cols-2">
             {benefits.map((b) => (
               <li key={b.title}>
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-teal-soft text-forest">{b.icon}</span>
@@ -321,7 +316,7 @@ export function Testimonials() {
     <section aria-labelledby="stories-heading" className="bg-peach-soft py-20 md:py-28">
       <div className="container-page">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow">Stories</p>
             <h2 id="stories-heading" className="h-section mt-3">
               The experience we&apos;re building toward.
@@ -330,7 +325,7 @@ export function Testimonials() {
           <span className="sample-tag">Illustrative · not real client reviews</span>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-5 md:grid-cols-3">
           {stories.map((s) => (
             <figure key={s.who} className="flex flex-col justify-between rounded-[var(--radius-card)] bg-cream p-7">
               <blockquote className="font-serif text-xl leading-snug text-forest-deep">
@@ -338,7 +333,7 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-3 text-sm text-muted">
                 <span className="h-px w-6 bg-forest/40" aria-hidden />
-                {s.who} <span className="text-muted/70">(placeholder)</span>
+                {s.who}
               </figcaption>
             </figure>
           ))}
@@ -389,12 +384,12 @@ export function Pricing() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Pricing</p>
-          <h2 className="h-section mt-3">Clear pricing. No surprises.</h2>
+          <h2 className="reveal h-section mt-3">Clear pricing. No surprises.</h2>
           <p className="mt-4 text-lg text-muted">Start with a free call, then choose what suits you.</p>
           <span className="sample-tag mt-5">Sample pricing for this concept</span>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+        <div className="reveal-group mt-12 grid items-stretch gap-5 lg:grid-cols-3">
           {plans.map((p) => (
             <div
               key={p.name}
@@ -442,18 +437,18 @@ export function Pricing() {
 /* ───────────────────────── Final CTA ───────────────────────── */
 export function FinalCta() {
   return (
-    <section className="pb-20 md:pb-28">
-      <div className="container-page">
-        <div className="relative overflow-hidden rounded-[2rem] bg-forest-deep">
+    <section className="relative isolate overflow-hidden bg-forest-deep">
+      <div>
+        <div>
           <Image
             src={IMAGES.calm}
             alt=""
             fill
-            sizes="(min-width: 1152px) 1100px, 100vw"
-            className="object-cover opacity-25"
+            sizes="100vw"
+            className="-z-10 object-cover opacity-30"
           />
-          <div className="relative px-6 py-16 text-center sm:px-12 md:py-24">
-            <h2 className="mx-auto max-w-2xl font-serif text-4xl leading-[1.1] tracking-tight text-cream md:text-5xl">
+          <div className="container-page relative py-24 text-center md:py-36">
+            <h2 className="reveal mx-auto max-w-3xl font-serif text-[clamp(2.5rem,6vw,4.75rem)] font-light leading-[1] tracking-[-0.02em] text-cream [text-wrap:balance]">
               Whenever you&apos;re ready, there&apos;s a space for you.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg text-cream/80">

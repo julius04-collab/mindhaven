@@ -53,6 +53,60 @@ body {
   border-radius: 6px;
 }
 
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-zoom { animation: hero-zoom 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Scroll animations: progressive enhancement via CSS scroll-driven timelines.
+   Browsers without support (or reduced-motion users) simply see the content. */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(56px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes unzoom {
+  from { transform: scale(1.18); }
+  to { transform: scale(1); }
+}
+@keyframes drift {
+  from { transform: translateY(-6%); }
+  to { transform: translateY(6%); }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    .reveal-group > * {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    .reveal-group > *:nth-child(2) { animation-range: entry 8% cover 36%; }
+    .reveal-group > *:nth-child(3) { animation-range: entry 16% cover 42%; }
+    .reveal-group > *:nth-child(4) { animation-range: entry 24% cover 48%; }
+    .reveal-group > *:nth-child(5) { animation-range: entry 32% cover 54%; }
+    .reveal-zoom img {
+      animation: unzoom linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+    .parallax img {
+      animation: drift linear both;
+      animation-timeline: view();
+      scale: 1.14;
+    }
+  }
+}
+
 @utility container-page {
   @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }

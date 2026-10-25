@@ -23,23 +23,23 @@ export default function Therapists() {
     <section id="therapists" className="bg-sand/60 py-20 md:py-28">
       <div className="container-page">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow">Meet the therapists</p>
             <h2 className="h-section mt-3">Real people who get what you&apos;re going through.</h2>
           </div>
           <span className="sample-tag">Fictional sample profiles</span>
         </div>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="reveal-group mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {THERAPISTS.map((t) => (
             <li key={t.id}>
               <button
                 type="button"
                 onClick={() => setActive(t)}
-                className="group flex h-full w-full flex-col rounded-[var(--radius-card)] bg-cream p-3 text-left ring-1 ring-line transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_40px_-24px_rgba(24,54,41,0.4)]"
+                className="group flex h-full w-full flex-col text-left"
                 aria-haspopup="dialog"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[999px] rounded-b-[0.9rem] bg-peach-soft">
+                <div className="reveal-zoom relative aspect-[4/5] w-full overflow-hidden bg-peach-soft">
                   <Image
                     src={t.image}
                     alt={`Portrait of ${t.name}`}
@@ -48,7 +48,7 @@ export default function Therapists() {
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 </div>
-                <div className="flex flex-1 flex-col px-2 pb-2 pt-5">
+                <div className="flex flex-1 flex-col pt-5">
                   <p className="text-xs font-medium uppercase tracking-wider text-muted">{t.title}</p>
                   <h3 className="mt-1 font-serif text-2xl text-forest-deep">{t.name}</h3>
                   <ul className="mt-3 flex flex-wrap gap-1.5">
@@ -81,7 +81,7 @@ export default function Therapists() {
         ref={dialogRef}
         onClose={() => setActive(null)}
         onClick={(e) => e.target === dialogRef.current && setActive(null)}
-        className="m-auto w-[min(92vw,44rem)] rounded-[1.75rem] bg-cream p-0 text-ink shadow-2xl backdrop:bg-forest-deep/50 backdrop:backdrop-blur-sm"
+        className="m-auto w-[min(92vw,44rem)] bg-cream p-0 text-ink shadow-2xl backdrop:bg-forest-deep/50 backdrop:backdrop-blur-sm"
         aria-labelledby="profile-name"
       >
         {active && (
