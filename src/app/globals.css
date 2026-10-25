@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream: #f8f7f2;
+  --color-sand: #efebe1;
+  --color-forest: #234d3c;
+  --color-forest-deep: #183629;
+  --color-teal: #8db8a5;
+  --color-teal-soft: #dcebe3;
+  --color-peach: #f2d4c5;
+  --color-peach-soft: #f8e7de;
+  --color-ink: #242824;
+  --color-muted: #5a625b;
+  --color-line: #e2ded2;
+
+  --font-serif: "Fraunces Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-peach);
+  color: var(--color-forest-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] text-forest;
+}
+@utility h-section {
+  @apply font-serif text-3xl leading-[1.12] tracking-tight text-forest-deep sm:text-4xl md:text-[2.75rem];
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold transition-all duration-200 active:scale-[0.98];
+}
+@utility btn-primary {
+  @apply btn bg-forest text-cream hover:bg-forest-deep hover:shadow-[0_8px_24px_-8px_rgba(35,77,60,0.55)];
+}
+@utility btn-secondary {
+  @apply btn border border-forest/25 bg-transparent text-forest hover:border-forest hover:bg-forest/5;
+}
+@utility sample-tag {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-forest/20 bg-white/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted;
 }

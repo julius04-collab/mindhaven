@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MindHaven — Day 01/30
 
-## Getting Started
+Landing page concept for an online therapy platform for busy professionals.
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router) · Tailwind CSS v4 · TypeScript · self-hosted Fraunces + Inter · Unsplash imagery
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy (Vercel)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push to GitHub: `git remote add origin <repo-url> && git push -u origin main`
+2. Import the repo at vercel.com/new — no settings to change.
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/page.tsx` — landing page (12 sections)
+- `src/app/find/` — 4-step therapist matching + demo booking flow (`/find?need=burnout`, `/find?therapist=amara` deep links)
+- `src/app/login`, `src/app/legal` — demo Log In and Privacy/Terms pages so no link is dead
+- `src/components/` — Nav, sections, Therapists (profile modal), Faq (accordion), Footer
+- `src/lib/data.ts` — services, sample therapists, FAQs, image URLs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All therapists, testimonials and prices are fictional samples and are labelled as such on the page.
