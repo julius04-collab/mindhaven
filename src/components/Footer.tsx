@@ -49,8 +49,8 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-teal">Contact</h2>
           <ul className="mt-4 space-y-3 text-cream/80">
             <li>
-              <a href="mailto:hello@mindhaven.example" className="hover:text-cream">
-                hello@mindhaven.example
+              <a href="mailto:adelanitobilobajulius@gmail.com" className="break-all hover:text-cream">
+                adelanitobilobajulius@gmail.com
               </a>
             </li>
             <li>Support: Mon–Sat, 8am–8pm</li>

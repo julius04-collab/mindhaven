@@ -14,8 +14,8 @@ export default function Faq() {
           <h2 className="reveal h-section mt-3">Questions you might have.</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Can&apos;t find what you&apos;re looking for? Email{" "}
-            <a href="mailto:hello@mindhaven.example" className="font-medium text-forest underline underline-offset-4">
-              hello@mindhaven.example
+            <a href="mailto:adelanitobilobajulius@gmail.com" className="break-all font-medium text-forest underline underline-offset-4">
+              adelanitobilobajulius@gmail.com
             </a>
             .
           </p>
