@@ -26,11 +26,11 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="hero-zoom -z-20 object-cover object-[65%_center]"
+        className="hero-zoom -z-20 object-cover object-center"
       />
       {/* Legibility: deep green wash from the left and bottom, keeps the photo breathing on the right */}
       <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(18,40,30,0.92)_0%,rgba(18,40,30,0.72)_38%,rgba(18,40,30,0.15)_75%),linear-gradient(0deg,rgba(18,40,30,0.85)_0%,rgba(18,40,30,0)_45%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(18,40,30,0.35)_0%,rgba(18,40,30,0.25)_25%,rgba(18,40,30,0.88)_62%,rgba(18,40,30,0.96)_100%)] lg:bg-[linear-gradient(90deg,rgba(18,40,30,0.88)_0%,rgba(18,40,30,0.6)_40%,rgba(18,40,30,0.1)_78%),linear-gradient(0deg,rgba(18,40,30,0.8)_0%,rgba(18,40,30,0)_45%)]"
         aria-hidden
       />
 
