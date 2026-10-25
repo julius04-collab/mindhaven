@@ -134,13 +134,13 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-28">
       <div className="container-page">
-        <div className="max-w-2xl">
+        <div className="reveal max-w-2xl">
           <p className="eyebrow">How it works</p>
           <h2 className="h-section mt-3">Getting support shouldn&apos;t feel like another job.</h2>
           <p className="mt-4 text-lg text-muted">Three simple steps, at your own pace.</p>
         </div>
 
-        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+        <ol className="reveal-group mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
           {steps.map((s, i) => (
             <li key={s.title} className="relative">
               {i < steps.length - 1 && (
@@ -178,7 +178,7 @@ export function Services() {
     <section id="services" className="bg-forest-deep py-20 text-cream md:py-28">
       <div className="container-page">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow !text-teal">Services</p>
             <h2 className="mt-3 font-serif text-3xl leading-[1.12] tracking-tight sm:text-4xl md:text-[2.75rem]">
               Support for what you&apos;re carrying right now.
@@ -190,7 +190,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href={`/find?need=${first.id}`}
             className="group flex flex-col justify-between rounded-[var(--radius-card)] bg-peach p-7 text-forest-deep transition-transform duration-300 hover:-translate-y-1 lg:row-span-2"
@@ -257,7 +257,7 @@ export function Why() {
     <section id="why" className="grid lg:grid-cols-2">
       <div className="contents">
         <div className="relative order-last min-h-[26rem] lg:order-first lg:min-h-full">
-          <div className="absolute inset-0 overflow-hidden bg-sand">
+          <div className="parallax absolute inset-0 overflow-hidden bg-sand">
             <Image
               src={IMAGES.why}
               alt="A woman sitting at a table with her laptop and a cup of coffee in soft daylight"
@@ -273,12 +273,12 @@ export function Why() {
 
         <div className="px-5 py-20 sm:px-8 md:py-28 lg:px-16 xl:pl-20 xl:pr-[max(2rem,calc((100vw-72rem)/2+2rem))]">
           <p className="eyebrow">Why MindHaven</p>
-          <h2 className="h-section mt-3">Built for people who keep putting themselves last.</h2>
+          <h2 className="reveal h-section mt-3">Built for people who keep putting themselves last.</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Traditional therapy can feel hard to fit in and harder to start. We&apos;ve removed the friction so the
             only thing left to focus on is you.
           </p>
-          <ul className="mt-10 grid gap-8 sm:grid-cols-2">
+          <ul className="reveal-group mt-10 grid gap-8 sm:grid-cols-2">
             {benefits.map((b) => (
               <li key={b.title}>
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-teal-soft text-forest">{b.icon}</span>
@@ -316,7 +316,7 @@ export function Testimonials() {
     <section aria-labelledby="stories-heading" className="bg-peach-soft py-20 md:py-28">
       <div className="container-page">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow">Stories</p>
             <h2 id="stories-heading" className="h-section mt-3">
               The experience we&apos;re building toward.
@@ -325,7 +325,7 @@ export function Testimonials() {
           <span className="sample-tag">Illustrative · not real client reviews</span>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="reveal-group mt-12 grid gap-5 md:grid-cols-3">
           {stories.map((s) => (
             <figure key={s.who} className="flex flex-col justify-between rounded-[var(--radius-card)] bg-cream p-7">
               <blockquote className="font-serif text-xl leading-snug text-forest-deep">
@@ -384,12 +384,12 @@ export function Pricing() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Pricing</p>
-          <h2 className="h-section mt-3">Clear pricing. No surprises.</h2>
+          <h2 className="reveal h-section mt-3">Clear pricing. No surprises.</h2>
           <p className="mt-4 text-lg text-muted">Start with a free call, then choose what suits you.</p>
           <span className="sample-tag mt-5">Sample pricing for this concept</span>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+        <div className="reveal-group mt-12 grid items-stretch gap-5 lg:grid-cols-3">
           {plans.map((p) => (
             <div
               key={p.name}
@@ -448,7 +448,7 @@ export function FinalCta() {
             className="-z-10 object-cover opacity-30"
           />
           <div className="container-page relative py-24 text-center md:py-36">
-            <h2 className="mx-auto max-w-3xl font-serif text-[clamp(2.5rem,6vw,4.75rem)] font-light leading-[1] tracking-[-0.02em] text-cream [text-wrap:balance]">
+            <h2 className="reveal mx-auto max-w-3xl font-serif text-[clamp(2.5rem,6vw,4.75rem)] font-light leading-[1] tracking-[-0.02em] text-cream [text-wrap:balance]">
               Whenever you&apos;re ready, there&apos;s a space for you.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg text-cream/80">

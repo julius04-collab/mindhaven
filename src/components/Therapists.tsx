@@ -23,14 +23,14 @@ export default function Therapists() {
     <section id="therapists" className="bg-sand/60 py-20 md:py-28">
       <div className="container-page">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div className="max-w-xl">
+          <div className="reveal max-w-xl">
             <p className="eyebrow">Meet the therapists</p>
             <h2 className="h-section mt-3">Real people who get what you&apos;re going through.</h2>
           </div>
           <span className="sample-tag">Fictional sample profiles</span>
         </div>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="reveal-group mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {THERAPISTS.map((t) => (
             <li key={t.id}>
               <button
@@ -39,7 +39,7 @@ export default function Therapists() {
                 className="group flex h-full w-full flex-col text-left"
                 aria-haspopup="dialog"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-peach-soft">
+                <div className="reveal-zoom relative aspect-[4/5] w-full overflow-hidden bg-peach-soft">
                   <Image
                     src={t.image}
                     alt={`Portrait of ${t.name}`}

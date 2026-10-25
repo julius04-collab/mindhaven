@@ -11,7 +11,7 @@ export default function Faq() {
       <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div>
           <p className="eyebrow">FAQ</p>
-          <h2 className="h-section mt-3">Questions you might have.</h2>
+          <h2 className="reveal h-section mt-3">Questions you might have.</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Can&apos;t find what you&apos;re looking for? Email{" "}
             <a href="mailto:hello@mindhaven.example" className="font-medium text-forest underline underline-offset-4">
