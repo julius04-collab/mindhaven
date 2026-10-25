@@ -333,7 +333,7 @@ export function Testimonials() {
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-3 text-sm text-muted">
                 <span className="h-px w-6 bg-forest/40" aria-hidden />
-                {s.who} <span className="text-muted/70">(placeholder)</span>
+                {s.who}
               </figcaption>
             </figure>
           ))}
