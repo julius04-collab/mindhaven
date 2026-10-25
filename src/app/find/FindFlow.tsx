@@ -250,7 +250,7 @@ export default function FindFlow() {
           <ul className="mt-8 space-y-4">
             {matches.map(({ t, s, reasons }, i) => (
               <li key={t.id} className="grid grid-cols-[5rem_1fr] gap-x-4 gap-y-4 rounded-[var(--radius-card)] border border-line bg-white/70 p-4 sm:grid-cols-[8rem_1fr_auto] sm:gap-x-5 sm:p-5">
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[999px] rounded-b-2xl bg-peach-soft">
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-peach-soft">
                   <Image src={t.image} alt={`Portrait of ${t.name}`} fill sizes="(min-width: 640px) 128px, 80px" className="object-cover" />
                 </div>
                 <div className="flex-1">
@@ -301,7 +301,7 @@ export default function FindFlow() {
             Book your first session
           </h1>
           <div className="mt-6 flex items-center gap-4 rounded-2xl bg-sand/70 p-4">
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-peach-soft">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden bg-peach-soft">
               <Image src={chosen.image} alt="" fill sizes="56px" className="object-cover" />
             </div>
             <div className="flex-1">

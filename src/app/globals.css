@@ -53,6 +53,17 @@ body {
   border-radius: 6px;
 }
 
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.hero-zoom { animation: hero-zoom 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
 @utility container-page {
   @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }

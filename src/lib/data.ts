@@ -1,7 +1,7 @@
 export const img = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const IMAGES = {
-  hero: img("photo-1524508762098-fd966ffb6ef9"),
+  hero: img("photo-1696299437505-ceb0fa8bfb38"),
   why: img("photo-1713865471511-2e6053ed99a8"),
   calm: img("photo-1512917602760-97a8fb80dca5"),
 };
